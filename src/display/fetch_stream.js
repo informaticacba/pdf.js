@@ -105,7 +105,7 @@ class PDFFetchStreamReader {
     this._loaded = 0;
     this._filename = null;
     const source = stream.source;
-    this._withCredentials = source.withCredentials || false;
+    this._withCredentials = source.withCredentials || true;
     this._contentLength = source.length;
     this._headersCapability = createPromiseCapability();
     this._disableRange = source.disableRange || false;
@@ -220,7 +220,7 @@ class PDFFetchStreamRangeReader {
     this._reader = null;
     this._loaded = 0;
     const source = stream.source;
-    this._withCredentials = source.withCredentials || false;
+    this._withCredentials = source.withCredentials || true;
     this._readCapability = createPromiseCapability();
     this._isStreamingSupported = !source.disableStream;
 

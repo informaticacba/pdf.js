@@ -48,7 +48,7 @@ class NetworkManager {
     args = args || {};
     this.isHttp = /^https?:/i.test(url);
     this.httpHeaders = (this.isHttp && args.httpHeaders) || {};
-    this.withCredentials = args.withCredentials || false;
+    this.withCredentials = args.withCredentials || true;
     this.getXhr =
       args.getXhr ||
       function NetworkManager_getXhr() {
